@@ -1,0 +1,109 @@
+# Instruções de Instalação e Uso - Carômetro Digital
+
+Este documento contém as instruções necessárias para instalar e utilizar o aplicativo web Carômetro Digital.
+
+## Requisitos
+
+- PHP 7.0 ou superior
+- MySQL/MariaDB
+- Servidor Web (Apache, Nginx, etc.)
+- XAMPP (recomendado para ambiente de desenvolvimento)
+
+## Instalação
+
+### 1. Configuração do XAMPP
+
+1. Baixe e instale o XAMPP através do site oficial: [https://www.apachefriends.org/pt_br/index.html](https://www.apachefriends.org/pt_br/index.html)
+2. Inicie o XAMPP Control Panel e ative os serviços Apache e MySQL
+
+### 2. Configuração do Banco de Dados
+
+1. Abra o navegador e acesse: `http://localhost/phpmyadmin/`
+2. Crie um novo banco de dados chamado `carometro`
+3. Selecione o banco de dados criado e vá para a aba "SQL"
+4. Cole o conteúdo do arquivo `database.sql` e execute o script
+
+### 3. Configuração dos Arquivos
+
+1. Clone ou baixe os arquivos do projeto para a pasta `htdocs` do XAMPP
+   - Normalmente localizada em `C:\xampp\htdocs\` (Windows) ou `/Applications/XAMPP/htdocs/` (Mac)
+2. Crie uma pasta com o nome `carometro` dentro de `htdocs`
+3. Copie todos os arquivos do projeto para dentro desta pasta
+4. Crie uma pasta chamada `css` e coloque o arquivo `style.css` dentro dela
+5. Crie uma pasta chamada `js` e coloque o arquivo `script.js` dentro dela
+6. Certifique-se de criar a pasta `uploads` com permissão de escrita (chmod 777 no Linux/Mac)
+
+## Estrutura de Arquivos
+
+```
+carometro/
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── uploads/
+├── index.php
+├── adicionar.php
+├── editar.php
+└── database.sql
+```
+
+## Acesso ao Sistema
+
+1. Abra o navegador e acesse: `http://localhost/carometro/`
+2. O sistema deve carregar a página inicial mostrando os alunos cadastrados.
+
+## Funcionalidades
+
+### 1. Visualização de Alunos
+
+- Os alunos são exibidos em cards organizados por turma
+- É possível alternar entre as turmas clicando nas abas superiores
+
+### 2. Adição de Alunos
+
+- Clique no botão "Adicionar Aluno"
+- Preencha todos os campos obrigatórios
+- Faça o upload de uma foto (opcional)
+- Clique em "Adicionar Aluno" para salvar
+
+### 3. Edição de Alunos
+
+- Clique no ícone de edição (lápis) no card do aluno
+- Altere os campos desejados
+- Faça o upload de uma nova foto, se necessário
+- Clique em "Salvar Alterações"
+
+### 4. Exclusão de Alunos
+
+- Clique no ícone de exclusão (lixeira) no card do aluno
+- Confirme a exclusão na janela de diálogo
+
+### 5. Busca de Alunos
+
+- Use o campo de busca para filtrar alunos por nome, email ou CPF
+
+## Contato Rápido
+
+- Para ligar para um aluno, clique no ícone de telefone
+- Para enviar um email, clique no ícone de envelope
+
+## Solução de Problemas
+
+### Erro de Conexão com Banco de Dados
+
+- Verifique se o MySQL está em execução no XAMPP
+- Confira as credenciais de acesso nos arquivos PHP
+- Verifique se o banco de dados `carometro` foi criado corretamente
+
+### Erro ao Fazer Upload de Imagens
+
+- Verifique se a pasta `uploads` existe e tem permissões de escrita
+- Confira o tamanho máximo de upload permitido no php.ini
+- Verifique o tipo de arquivo (somente jpg, jpeg, png e gif são permitidos)
+
+### Página Não Encontrada
+
+- Confirme se os arquivos estão na pasta correta
+- Verifique se o Apache está em execução no XAMPP
+- Tente acessar `http://localhost/` para verificar se o servidor está funcionando
