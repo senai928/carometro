@@ -1,12 +1,12 @@
 <?php
 // Configurações de conexão com o banco de dados
-$host = "localhost";
-$usuario_db = "root";
-$senha_db = "";
-$banco_db = "carometro";
+$servidor = "db"; // altere de "localhost" para "db"
+$usuario = "root";
+$senha = "root";
+$banco = "carometro";
 
 // Estabelece a conexão com o banco de dados
-$conexao = mysqli_connect($host, $usuario_db, $senha_db, $banco_db);
+$conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 
 // Verifica se houve erro na conexão
 if (mysqli_connect_errno()) {

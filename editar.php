@@ -3,10 +3,11 @@
 session_start();
 
 // Conexão com o banco de dados
-$servidor = "localhost";
+$servidor = "db"; // altere de "localhost" para "db"
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "carometro";
+
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 
@@ -241,7 +242,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <label for="turma">Turma:</label>
                     <select id="turma" name="turma" required>
-                        <option value="prof" <?php echo $aluno['turma'] == 'prof' ? 'selected' : ''; ?>>Profesores</option>
                         <option value="Idev 2" <?php echo $aluno['turma'] == 'Idev 2' ? 'selected' : ''; ?>>Idev 2</option>
                         <option value="Idev 3" <?php echo $aluno['turma'] == 'Idev 3' ? 'selected' : ''; ?>>Idev 3</option>
                         <option value="Idev 4" <?php echo $aluno['turma'] == 'Idev 4' ? 'selected' : ''; ?>>Idev 4</option>

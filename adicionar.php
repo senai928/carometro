@@ -3,10 +3,11 @@
 session_start();
 
 // Conexão com o banco de dados
-$servidor = "localhost";
+$servidor = "db"; // altere de "localhost" para "db"
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "carometro";
+
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
 
@@ -196,7 +197,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-group">
                     <label for="turma">Turma:</label>
                     <select id="turma" name="turma" required>
-                        <option value="Prof">Professores</option>
                         <option value="Idev 2">Idev 2</option>
                         <option value="Idev 3">Idev 3</option>
                         <option value="Idev 4">Idev 4</option>

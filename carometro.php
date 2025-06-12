@@ -3,9 +3,9 @@
 session_start();
 
 // Conexão com o banco de dados
-$servidor = "localhost";
+$servidor = "db"; // altere de "localhost" para "db"
 $usuario = "root";
-$senha = "";
+$senha = "root";
 $banco = "carometro";
 
 $conexao = mysqli_connect($servidor, $usuario, $senha, $banco);
@@ -70,7 +70,6 @@ $turma_atual = isset($_GET['turma']) ? $_GET['turma'] : 'Idev 2';
 $alunos = buscarAlunos($conexao, $turma_atual, $termo_busca);
 
 // Contar alunos por turma
-$total_PROF = contarAlunosPorTurma($conexao, 'PROF');
 $total_idev2 = contarAlunosPorTurma($conexao, 'Idev 2');
 $total_idev3 = contarAlunosPorTurma($conexao, 'Idev 3');
 $total_idev4 = contarAlunosPorTurma($conexao, 'Idev 4');
@@ -197,7 +196,6 @@ $total_idev4 = contarAlunosPorTurma($conexao, 'Idev 4');
         </div>
         
         <div class="tabs">
-            <a href="?turma=Prof" class="tab <?php echo $turma_atual == 'prof' ? 'active' : ''; ?>">Professoresxx</a>
             <a href="?turma=Idev 2" class="tab <?php echo $turma_atual == 'Idev 2' ? 'active' : ''; ?>">Idev 2</a>
             <a href="?turma=Idev 3" class="tab <?php echo $turma_atual == 'Idev 3' ? 'active' : ''; ?>">Idev 3</a>
             <a href="?turma=Idev 4" class="tab <?php echo $turma_atual == 'Idev 4' ? 'active' : ''; ?>">Idev 4</a>
